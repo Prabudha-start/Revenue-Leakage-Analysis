@@ -20,7 +20,6 @@ customer retention, loyalty programs, and targeted marketing.
 .mode box
 
 SELECT
-
     CustomerID,
 
     COUNT(DISTINCT Invoice) AS Orders,
@@ -36,15 +35,14 @@ SELECT
         2
     ) AS Average_Order_Value,
 
-   RANK() OVER (
-    ORDER BY SUM(Revenue) DESC
-) AS Customer_Revenue_Rank
+    RANK() OVER (
+        ORDER BY SUM(Revenue) DESC
+    ) AS Customer_Revenue_Rank
 
 FROM online_retail
 
 WHERE Invoice NOT LIKE 'C%'
-  AND CustomerID <> ''
-  AND CustomerID <> 'Customer ID'
+  AND CustomerID IS NOT NULL
 
 GROUP BY CustomerID
 
@@ -75,11 +73,13 @@ WITH CustomerSales AS (
 
     SELECT
         CustomerID,
-        ROUND(SUM(Revenue),2) AS Total_Sales
+        SUM(Revenue) AS Total_Sales
+
     FROM online_retail
+
     WHERE Invoice NOT LIKE 'C%'
-      AND CustomerID <> ''
-      AND CustomerID <> 'Customer ID'
+      AND CustomerID IS NOT NULL
+
     GROUP BY CustomerID
 
 ),
@@ -102,10 +102,14 @@ Segments AS (
 )
 
 SELECT
-
     Customer_Segment,
+
     COUNT(*) AS Customers,
-    ROUND(AVG(Total_Sales),2) AS Avg_Sales
+
+    ROUND(
+        AVG(Total_Sales),
+        2
+    ) AS Avg_Sales
 
 FROM Segments
 
