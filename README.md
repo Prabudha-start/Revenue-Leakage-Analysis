@@ -1,10 +1,10 @@
-# 📊 Revenue Leakage Analysis
+# Revenue Leakage Analysis 🧐
 
 An end-to-end Data Analytics portfolio project investigating revenue leakage, customer behaviour, sales performance, product performance, country-level trends, and returns using Python, SQL, SQLite, Jupyter Notebook, and Power BI.
 
 ---
 
-## 📌 Project Overview
+## Project Overview 
 
 Revenue leakage can reduce realized sales through returns and other transaction-level issues. This project uses an online retail dataset to investigate sales performance and identify where returned transactions create measurable revenue loss.
 
@@ -23,7 +23,7 @@ The project demonstrates a complete analytics workflow from raw data preparation
 
 ---
 
-## 🚀 Tech Stack
+## Tech Stack
 
 - Python
 - Pandas
@@ -40,7 +40,7 @@ The project demonstrates a complete analytics workflow from raw data preparation
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 ```text
 Revenue-Leakage-Analysis/
@@ -76,3 +76,129 @@ Revenue-Leakage-Analysis/
 ├── requirements.txt
 ├── .gitignore
 └── README.md
+```
+
+## 📉 Dashboard Pages
+
+The project includes dashboard views covering the following analytical areas:
+
+### Executive Dashboard
+
+Provides an executive view of business performance, including:
+
+Total Sales
+Revenue Lost
+Revenue Leakage %
+Total Customers
+Total Orders
+Average Order Value
+Monthly Revenue Trend
+Customer Analysis
+
+### Analyzes customer purchasing behaviour and revenue contribution.
+
+Includes:
+
+Top Customers by Sales
+Customer Revenue Contribution
+Customer Segmentation
+Orders per Customer
+Average Order Value
+Customer Return Analysis
+Country Analysis
+
+### Examines geographic sales and return performance.
+
+Includes:
+
+Sales by Country
+Revenue Leakage by Country
+Returned Orders
+Average Order Value
+Country-level performance comparisons
+Product Analysis
+
+### Examines product-level sales and return behaviour.
+
+Includes:
+
+Top Revenue-generating Products
+Products with Highest Revenue Leakage
+Returned Items
+Revenue Lost by Product
+Product Return Rate
+📈 Key KPIs
+Total Sales
+Revenue Lost
+Revenue Leakage %
+Total Customers
+Total Orders
+Returned Orders
+Average Order Value
+Quantity Sold
+
+
+## 💻 SQL Analysis
+
+The SQL layer contains reusable SQLite analysis covering:
+
+Executive KPIs
+Sales by Country
+Monthly Revenue Trends
+Customer Analysis
+Customer Segmentation
+Product Performance
+Revenue Leakage by Country, Customer, and Product
+Return Order Metrics
+Time-based Analysis
+Advanced SQL using window functions, ranking, quartiles, and running totals
+
+
+## 🌈 Dashboard Preview
+Executive Dashboard
+
+Customer Analysis Dashboard
+
+Country Analysis Dashboard
+
+Product Analysis Dashboard
+
+## ⏯️ How to Run
+
+Clone the repository:
+
+git clone https://github.com/Prabudha-start/Revenue-Leakage-Analysis.git
+cd Revenue-Leakage-Analysis
+
+Create and activate a virtual environment, then install the dependencies:
+
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+
+Open the notebooks in notebooks/ to review the analysis and use the SQL files in sql/ with SQLite.
+
+The dashboard preview images are available in images/.
+
+## 🎭 Skills Demonstrated -
+
+Data Understanding
+Data Cleaning
+Feature Engineering
+Exploratory Data Analysis
+SQL Analytics
+KPI Development
+Business Intelligence
+Data Visualization
+Dashboard Design
+Business Storytelling
+
+
+## 😇 Author
+
+Prabudha Darabare
+
+Data Analyst | Prompt Engineer | AI-Assisted Analytics
+
+GitHub:
+https://github.com/Prabudha-start
