@@ -2,6 +2,15 @@
 PROJECT      : Revenue Leakage Analysis
 FILE         : 02_sales_analysis.sql
 
+DESCRIPTION
+-----------
+Sales performance analysis covering country-level performance and
+monthly revenue trends.
+
+==============================================================================*/
+
+
+/*==============================================================================
 QUERY 1
 Sales by Country
 
@@ -12,13 +21,36 @@ Which countries generate the highest revenue?
 Business Value
 --------------
 Identifies the company's strongest geographic markets by comparing
-sales performance, order volume, average order value, and highest
-transaction value.
+sales revenue, order volume, average order value, and highest order value.
 
+NOTE
+----
+Order-level metrics are calculated from invoice totals rather than
+individual transaction lines. This ensures Highest_Order_Value represents
+the value of a complete order.
 ==============================================================================*/
 
 .headers on
 .mode box
+
+WITH OrderTotals AS (
+
+    SELECT
+        Invoice,
+        Country,
+        SUM(Revenue) AS Order_Revenue
+
+    FROM online_retail
+
+    WHERE Invoice NOT LIKE 'C%'
+      AND Country <> 'Country'
+      AND TRIM(Country) <> ''
+
+    GROUP BY
+        Invoice,
+        Country
+
+)
 
 SELECT
     Country,
@@ -26,30 +58,27 @@ SELECT
     COUNT(DISTINCT Invoice) AS Orders,
 
     ROUND(
-        SUM(Revenue),
+        SUM(Order_Revenue),
         2
     ) AS Total_Revenue,
 
     ROUND(
-        SUM(Revenue) * 1.0 /
+        SUM(Order_Revenue) * 1.0 /
         COUNT(DISTINCT Invoice),
         2
     ) AS Average_Order_Value,
 
     ROUND(
-        MAX(Revenue),
+        MAX(Order_Revenue),
         2
-    ) AS Highest_Order
+    ) AS Highest_Order_Value
 
-FROM online_retail
-
-WHERE Invoice NOT LIKE 'C%'
-  AND Country <> 'Country'
-  AND TRIM(Country) <> ''
+FROM OrderTotals
 
 GROUP BY Country
 
 ORDER BY Total_Revenue DESC;
+
 
 /*==============================================================================
 QUERY 2
@@ -65,14 +94,15 @@ Measures month-over-month sales performance and identifies growth
 or decline trends for executive reporting.
 ==============================================================================*/
 
-.headers on
-.mode box
-
 WITH MonthlySales AS (
 
     SELECT
         "Year-Month",
-        ROUND(SUM(Revenue), 2) AS Monthly_Revenue
+
+        ROUND(
+            SUM(Revenue),
+            2
+        ) AS Monthly_Revenue
 
     FROM online_retail
 
@@ -81,6 +111,20 @@ WITH MonthlySales AS (
 
     GROUP BY "Year-Month"
 
+),
+
+MonthlyComparison AS (
+
+    SELECT
+        "Year-Month",
+        Monthly_Revenue,
+
+        LAG(Monthly_Revenue) OVER (
+            ORDER BY "Year-Month"
+        ) AS Previous_Month_Revenue
+
+    FROM MonthlySales
+
 )
 
 SELECT
@@ -88,38 +132,29 @@ SELECT
 
     Monthly_Revenue,
 
-    LAG(Monthly_Revenue) OVER (
-        ORDER BY "Year-Month"
-    ) AS Previous_Month_Revenue,
+    Previous_Month_Revenue,
 
     ROUND(
-        Monthly_Revenue -
-        LAG(Monthly_Revenue) OVER (
-            ORDER BY "Year-Month"
-        ),
+        Monthly_Revenue - Previous_Month_Revenue,
         2
     ) AS Revenue_Change,
 
     ROUND(
         CASE
-            WHEN LAG(Monthly_Revenue) OVER (
-                ORDER BY "Year-Month"
-            ) IS NULL
+            WHEN Previous_Month_Revenue IS NULL
+                 OR Previous_Month_Revenue = 0
             THEN NULL
 
             ELSE
                 (
-                    (Monthly_Revenue -
-                    LAG(Monthly_Revenue) OVER (
-                        ORDER BY "Year-Month"
-                    ))
+                    (Monthly_Revenue - Previous_Month_Revenue)
                     * 100.0
                 ) /
-                LAG(Monthly_Revenue) OVER (
-                    ORDER BY "Year-Month"
-                )
+                Previous_Month_Revenue
         END,
         2
     ) AS Growth_Percentage
 
-FROM MonthlySales;
+FROM MonthlyComparison
+
+ORDER BY "Year-Month";
