@@ -19,3 +19,5 @@ __pycache__/
 
 # SQLite temporary files
 *.db-journal
+
+data/online_retail.db

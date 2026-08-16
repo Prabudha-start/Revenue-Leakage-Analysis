@@ -30,7 +30,7 @@ Customers AS (
     SELECT COUNT(DISTINCT CustomerID) AS Total_Customers
     FROM online_retail
     WHERE Invoice NOT LIKE 'C%'
-      AND CustomerID <> ''
+      AND CustomerID IS NOT NULL
 ),
 Orders AS (
     SELECT COUNT(DISTINCT Invoice) AS Total_Orders
