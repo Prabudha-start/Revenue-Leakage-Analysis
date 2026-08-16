@@ -45,9 +45,6 @@ The project demonstrates a complete analytics workflow from raw data preparation
 ```text
 Revenue-Leakage-Analysis/
 │
-├── dashboard/
-│   └── Revenue_Leakage_Dashboard.pbix
-│
 ├── data/
 │   ├── raw/
 │   │   └── online_retail_II.xlsx
@@ -66,8 +63,6 @@ Revenue-Leakage-Analysis/
 │   ├── 03_feature_engineering.ipynb
 │   └── 04_exploratory_analysis.ipynb
 │
-├── reports/
-│
 ├── sql/
 │   ├── 00_schema.sql
 │   ├── 01_executive_kpis.sql
@@ -77,8 +72,6 @@ Revenue-Leakage-Analysis/
 │   ├── 05_revenue_leakage.sql
 │   ├── 06_time_analysis.sql
 │   └── 07_advanced_sql.sql
-│
-├── src/
 │
 ├── requirements.txt
 ├── .gitignore
