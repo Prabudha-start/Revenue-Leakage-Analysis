@@ -1,23 +1,25 @@
 # 📊 Revenue Leakage Analysis
 
-An end-to-end Data Analytics project that uncovers revenue leakage, customer behavior, sales performance, product performance, and return trends using Python, SQL, SQLite, and Microsoft Power BI.
+An end-to-end Data Analytics portfolio project investigating revenue leakage, customer behaviour, sales performance, product performance, country-level trends, and returns using Python, SQL, SQLite, Jupyter Notebook, and Power BI.
 
 ---
 
 ## 📌 Project Overview
 
-Revenue leakage silently reduces profitability through product returns, discounts, cancellations, pricing issues, and operational inefficiencies.
+Revenue leakage can reduce realized sales through returns and other transaction-level issues. This project uses an online retail dataset to investigate sales performance and identify where returned transactions create measurable revenue loss.
 
-This project analyzes an online retail dataset to identify:
+The analysis covers:
 
-- Revenue leakage
+- Revenue and sales KPIs
+- Revenue leakage from returned transactions
 - Customer purchasing behaviour
-- Product performance
-- Country-wise sales trends
-- Sales KPIs
-- Business opportunities
+- Product performance and return patterns
+- Country-level sales and return trends
+- Monthly and time-based performance
+- Advanced SQL analysis
+- Executive dashboard reporting
 
-The project demonstrates the complete analytics workflow from raw data to executive dashboards.
+The project demonstrates a complete analytics workflow from raw data preparation through business analysis and dashboard storytelling.
 
 ---
 
@@ -26,8 +28,11 @@ The project demonstrates the complete analytics workflow from raw data to execut
 - Python
 - Pandas
 - NumPy
+- Matplotlib
+- Plotly
 - SQL
 - SQLite
+- SQLAlchemy
 - Jupyter Notebook
 - Power BI
 - Git
@@ -37,194 +42,44 @@ The project demonstrates the complete analytics workflow from raw data to execut
 
 ## 📂 Project Structure
 
-```
+```text
 Revenue-Leakage-Analysis/
 │
 ├── dashboard/
-│   └── Revenue_Leakage.pbix
+│   └── Revenue_Leakage_Dashboard.pbix
 │
 ├── data/
 │   ├── raw/
+│   │   └── online_retail_II.xlsx
 │   └── cleaned/
+│       └── online_retail_cleaned.csv
+│
+├── images/
+│   ├── executive_dashboard.png
+│   ├── customer_analysis.png
+│   ├── country_analysis.png
+│   └── product_analysis.png
 │
 ├── notebooks/
 │   ├── 01_data_understanding.ipynb
 │   ├── 02_data_cleaning.ipynb
 │   ├── 03_feature_engineering.ipynb
-│   ├── 04_exploratory_analysis.ipynb
-│   └── 05_cohort_analysis.ipynb
+│   └── 04_exploratory_analysis.ipynb
 │
 ├── reports/
 │
 ├── sql/
+│   ├── 00_schema.sql
+│   ├── 01_executive_kpis.sql
+│   ├── 02_sales_analysis.sql
+│   ├── 03_customer_analysis.sql
+│   ├── 04_product_analysis.sql
+│   ├── 05_revenue_leakage.sql
+│   ├── 06_time_analysis.sql
+│   └── 07_advanced_sql.sql
+│
+├── src/
 │
 ├── requirements.txt
+├── .gitignore
 └── README.md
-```
-
----
-
-# 📊 Dashboard Pages
-
-## Executive Dashboard
-
-Provides an executive summary of the business including:
-
-- Total Revenue
-- Revenue Leakage
-- Orders
-- Customers
-- Products
-- Return Rate
-- Monthly Sales Trend
-
----
-
-## Customer Analysis
-
-Analyzes customer purchasing behaviour.
-
-Includes:
-
-- Top Customers by Sales
-- Revenue Lost by Customer
-- Average Revenue per Customer
-- Average Orders per Customer
-- Customer Return Rate
-
----
-
-## Country Analysis
-
-Shows geographical performance.
-
-Includes:
-
-- Top Countries by Sales
-- Revenue Leakage by Country
-- Returned Orders
-- Revenue Leakage %
-- Country Insights
-
----
-
-## Product Analysis
-
-Measures product performance.
-
-Includes:
-
-- Top Selling Products
-- Highest Revenue Loss Products
-- Quantity Sold
-- Product Revenue Leakage %
-- Product Insights
-
----
-
-# 📈 Key KPIs
-
-- Total Sales
-- Revenue Lost
-- Revenue Leakage %
-- Total Customers
-- Total Orders
-- Returned Orders
-- Average Revenue per Customer
-- Average Orders per Customer
-- Quantity Sold
-
----
-
-# 🧠 Business Insights
-
-Some key findings include:
-
-- A small number of customers generate a significant share of revenue.
-- Product returns contribute substantially to revenue leakage.
-- Certain countries contribute disproportionately to returned orders.
-- High-selling products are not always the most profitable.
-- Revenue leakage can be reduced through improved return management and pricing strategies.
-
----
-
-# 💻 SQL Analysis
-
-SQL scripts include:
-
-- Executive KPIs
-- Customer Analysis
-- Country Analysis
-- Product Analysis
-- Revenue Leakage Analysis
-- Time-based Analysis
-- Advanced SQL Queries
-
----
-
-# 📷 Dashboard Preview
-
-## Executive Dashboard
-
-![Executive Dashboard](images/executive_dashboard.png)
-
----
-
-## Customer Analysis Dashboard
-
-![Customer Analysis](images/customer_analysis.png)
-
----
-
-## Country Analysis Dashboard
-
-![Country Analysis](images/country_analysis.png)
-
----
-
-## Product Analysis Dashboard
-
-![Product Analysis](images/product_analysis.png)
-
----
-
-# ▶️ How to Run
-
-Clone the repository
-
-```bash
-git clone https://github.com/yourusername/Revenue-Leakage-Analysis.git
-```
-
-Install dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
-Open the notebooks or Power BI dashboard.
-
----
-
-# 📚 Skills Demonstrated
-
-- Data Cleaning
-- Exploratory Data Analysis
-- Feature Engineering
-- SQL Analytics
-- KPI Development
-- Business Intelligence
-- Data Visualization
-- Dashboard Design
-- Business Storytelling
-
----
-
-# 👤 Author
-
-**Prabudha Darabare**
-
-Data Analyst | Prompt Engineer | AI-Assisted Analytics
-
-GitHub:
-https://github.com/Prabudha-start
