@@ -86,119 +86,146 @@ The project includes dashboard views covering the following analytical areas:
 
 Provides an executive view of business performance, including:
 
-Total Sales
-Revenue Lost
-Revenue Leakage %
-Total Customers
-Total Orders
-Average Order Value
-Monthly Revenue Trend
-Customer Analysis
+- Total Sales
+- Revenue Lost
+- Revenue Leakage %
+- Total Customers
+- Total Orders
+- Average Order Value
+- Monthly Revenue Trend
 
-### Analyzes customer purchasing behaviour and revenue contribution.
+### Customer Analysis
 
-Includes:
-
-Top Customers by Sales
-Customer Revenue Contribution
-Customer Segmentation
-Orders per Customer
-Average Order Value
-Customer Return Analysis
-Country Analysis
-
-### Examines geographic sales and return performance.
+Analyzes customer purchasing behaviour and revenue contribution.
 
 Includes:
 
-Sales by Country
-Revenue Leakage by Country
-Returned Orders
-Average Order Value
-Country-level performance comparisons
-Product Analysis
+- Top Customers by Sales
+- Customer Revenue Contribution
+- Customer Segmentation
+- Orders per Customer
+- Average Order Value
+- Customer Return Analysis
 
-### Examines product-level sales and return behaviour.
+### Country Analysis
+
+Examines geographic sales and return performance.
 
 Includes:
 
-Top Revenue-generating Products
-Products with Highest Revenue Leakage
-Returned Items
-Revenue Lost by Product
-Product Return Rate
-📈 Key KPIs
-Total Sales
-Revenue Lost
-Revenue Leakage %
-Total Customers
-Total Orders
-Returned Orders
-Average Order Value
-Quantity Sold
+- Sales by Country
+- Revenue Leakage by Country
+- Returned Orders
+- Average Order Value
+- Country-level performance comparisons
 
+### Product Analysis
+
+Examines product-level sales and return behaviour.
+
+Includes:
+
+- Top Revenue-generating Products
+- Products with Highest Revenue Leakage
+- Returned Items
+- Revenue Lost by Product
+- Product Return Rate
+
+---
+
+## 📈 Key KPIs
+
+- Total Sales
+- Revenue Lost
+- Revenue Leakage %
+- Total Customers
+- Total Orders
+- Returned Orders
+- Average Order Value
+- Quantity Sold
+
+---
 
 ## 💻 SQL Analysis
 
 The SQL layer contains reusable SQLite analysis covering:
 
-Executive KPIs
-Sales by Country
-Monthly Revenue Trends
-Customer Analysis
-Customer Segmentation
-Product Performance
-Revenue Leakage by Country, Customer, and Product
-Return Order Metrics
-Time-based Analysis
-Advanced SQL using window functions, ranking, quartiles, and running totals
+- Executive KPIs
+- Sales by Country
+- Monthly Revenue Trends
+- Customer Analysis
+- Customer Segmentation
+- Product Performance
+- Revenue Leakage by Country, Customer, and Product
+- Return Order Metrics
+- Time-based Analysis
+- Advanced SQL using window functions, ranking, quartiles, and running totals
 
+---
 
 ## 🌈 Dashboard Preview
-Executive Dashboard
 
-Customer Analysis Dashboard
+### Executive Dashboard
 
-Country Analysis Dashboard
+![Executive Dashboard](images/executive_dashboard.png)
 
-Product Analysis Dashboard
+### Customer Analysis Dashboard
+
+![Customer Analysis](images/customer_analysis.png)
+
+### Country Analysis Dashboard
+
+![Country Analysis](images/country_analysis.png)
+
+### Product Analysis Dashboard
+
+![Product Analysis](images/product_analysis.png)
+
+---
 
 ## ⏯️ How to Run
 
 Clone the repository:
 
+```bash
 git clone https://github.com/Prabudha-start/Revenue-Leakage-Analysis.git
 cd Revenue-Leakage-Analysis
+```
 
 Create and activate a virtual environment, then install the dependencies:
 
+```bash
 python -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
+```
 
-Open the notebooks in notebooks/ to review the analysis and use the SQL files in sql/ with SQLite.
+Open the notebooks in `notebooks/` to review the analysis and use the SQL files in `sql/` with SQLite.
 
-The dashboard preview images are available in images/.
+The dashboard preview images are available in `images/`.
 
-## 🎭 Skills Demonstrated -
+---
 
-Data Understanding
-Data Cleaning
-Feature Engineering
-Exploratory Data Analysis
-SQL Analytics
-KPI Development
-Business Intelligence
-Data Visualization
-Dashboard Design
-Business Storytelling
+## 🎭 Skills Demonstrated
 
+- Data Understanding
+- Data Cleaning
+- Feature Engineering
+- Exploratory Data Analysis
+- SQL Analytics
+- KPI Development
+- Business Intelligence
+- Data Visualization
+- Dashboard Design
+- Business Storytelling
+
+---
 
 ## 😇 Author
 
-Prabudha Darabare
+**Prabudha Darabare**
 
 Data Analyst | Prompt Engineer | AI-Assisted Analytics
 
-GitHub:
+GitHub:  
 https://github.com/Prabudha-start
